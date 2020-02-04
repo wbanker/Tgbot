@@ -17,6 +17,7 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
+from tg_bot.modules.translations.strings import tld
 
 PM_START_TEXT = """
 Hey {}, my name is **{}**! Im a group management Bot... 
