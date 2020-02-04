@@ -142,10 +142,16 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Join Support Group",
-                                                                       url="t.me/ctrlsupport".format(bot.username))]]))
-
+                PM_START_TEXT.format(escape_markdown(first_name)
+                buttons = InlineKeyboardMarkup(
+                    [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/itzjokerRobot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", url="t.me/itzjokerRobot?start=help")],
+                    [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/zonerschat")]]),
+                update.effective_message.reply_text(
+                    tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
+                    disable_web_page_preview=True,
+                    parse_mode=ParseMode.MARKDOWN,
+                    reply_markup=buttons)
+        
     else:
         
         update.effective_message.reply_text("Yo,I'm alive👩")
