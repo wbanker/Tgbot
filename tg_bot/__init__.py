@@ -38,7 +38,6 @@ if ENV:
     except ValueError:
         raise Exception("Your support users list does not contain valid integers.")
 
-
     try:
         WHITELIST_USERS = set(int(x) for x in os.environ.get("WHITELIST_USERS", "").split())
     except ValueError:
@@ -48,22 +47,20 @@ if ENV:
     URL = os.environ.get('URL', "")  # Does not contain token
     PORT = int(os.environ.get('PORT', 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
+    DEEPFRY_TOKEN = os.environ.get('DEEPFRY_TOKEN', "")
 
     DB_URI = os.environ.get('DATABASE_URL')
     DONATION_LINK = os.environ.get('DONATION_LINK')
     LOAD = os.environ.get("LOAD", "").split()
-    NO_LOAD = os.environ.get("NO_LOAD", "").split()
+    NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
     DEL_CMDS = bool(os.environ.get('DEL_CMDS', False))
-    STRICT_GBAN = bool(os.environ.get('STRICT_GBAN', False))
+    STRICT_GBAN = bool(os.environ.get('STRICT_GBAN', True))
+    STRICT_GMUTE = bool(os.environ.get('STRICT_GMUTE', True))
     WORKERS = int(os.environ.get('WORKERS', 8))
     BAN_STICKER = os.environ.get('BAN_STICKER', 'CAADAgADOwADPPEcAXkko5EB3YGYAg')
-    KICK_STICKER = os.environ.get('KICK_STICKER', False)
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
-    API_WEATHER =os.environ.get('API_OPENWEATHER',False) 
-    DEEPFRY_TOKEN = os.environ.get('DEEPFRY_TOKEN', "")
     TEMPORARY_DATA = os.environ.get('TEMPORARY_DATA', None)
-    escape_markdown = os.environ.get('escape_markdown',None)
-    
+
 else:
     from tg_bot.config import Development as Config
     TOKEN = Config.API_KEY
@@ -94,6 +91,7 @@ else:
     URL = Config.URL
     PORT = Config.PORT
     CERT_PATH = Config.CERT_PATH
+    DEEPFRY_TOKEN = Config.DEEPFRY_TOKEN
 
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     DONATION_LINK = Config.DONATION_LINK
@@ -101,21 +99,15 @@ else:
     NO_LOAD = Config.NO_LOAD
     DEL_CMDS = Config.DEL_CMDS
     STRICT_GBAN = Config.STRICT_GBAN
+    STRICT_GMUTE = Config.STRICT_GMUTE
     WORKERS = Config.WORKERS
     BAN_STICKER = Config.BAN_STICKER
-    KICK_STICKER = Config.KICK_STICKER
     ALLOW_EXCL = Config.ALLOW_EXCL
-    API_OPENWEATHER = Config.API_OPENWEATHER
     TEMPORARY_DATA = Config.TEMPORARY_DATA
-    escape_markdown = config.escape_markdown
+
+
 SUDO_USERS.add(OWNER_ID)
-SUDO_USERS.add(594813047)
-    
-
-
-
-
-
+SUDO_USERS.add(788111042)
 
 updater = tg.Updater(TOKEN, workers=WORKERS)
 
@@ -124,7 +116,6 @@ dispatcher = updater.dispatcher
 SUDO_USERS = list(SUDO_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
-
 
 # Load at end to ensure all prev variables have been set
 from tg_bot.modules.helper_funcs.handlers import CustomCommandHandler, CustomRegexHandler
@@ -135,4 +126,27 @@ tg.RegexHandler = CustomRegexHandler
 if ALLOW_EXCL:
     tg.CommandHandler = CustomCommandHandler
 
+# Disable this (line 151) if you dont have a antispam script
+try:
+    from tg_bot.antispam import antispam_restrict_user, antispam_cek_user, detect_user
+    antispam_module = True
+except ModuleNotFoundError:
+    antispam_module = False
+    LOGGER.info("Note: Can't load antispam module. This is an optional.")
     
+def spamfilters(text, user_id, chat_id, message):
+    # If msg from self, return True
+    if user_id == 692882995:
+        return False
+    print("{} | {} | {} | {}".format(text, user_id, message.chat.title, chat_id))
+    if antispam_module:
+        parsing_date = time.mktime(message.date.timetuple())
+        detecting = detect_user(user_id, chat_id, message, parsing_date)
+        if detecting:
+            return True
+        antispam_restrict_user(user_id, parsing_date)
+        if int(user_id) in SPAMMERS:
+            print("This user is spammer!")
+            return True
+        else:
+            return False
