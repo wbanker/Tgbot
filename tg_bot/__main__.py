@@ -141,7 +141,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/Wolverinexmen_bot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", url="t.me/Wolverinexmen_bot?start=help")],
-                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/Sammy0007_chat")],
+                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/Sammy0007_chat")]])
             update.effective_message.reply_text(
                 tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
