@@ -60,6 +60,7 @@ if ENV:
     BAN_STICKER = os.environ.get('BAN_STICKER', 'CAADAgADOwADPPEcAXkko5EB3YGYAg')
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
     TEMPORARY_DATA = os.environ.get('TEMPORARY_DATA', None)
+    escape_markdown = os.environ.get('escape_markdown',None)
 
 else:
     from tg_bot.config import Development as Config
