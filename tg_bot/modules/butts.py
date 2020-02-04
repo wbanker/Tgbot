@@ -30,5 +30,5 @@ __help__ = """
  - /butts: Sends Random Butts pic.
 """
 __mod_name__ = "NSFW"
-BUTTS_HANDLER = DisableCommandHandler("butts", butts, pass_args=True, filters=Filters.group, admin_ok=True)
+BUTTS_HANDLER = DisableAbleCommandHandler("butts", butts, pass_args=True, filters=Filters.group, admin_ok=True)
 dispatcher.add_handler(BUTTS_HANDLER)
