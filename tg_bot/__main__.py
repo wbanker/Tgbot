@@ -27,7 +27,7 @@ you can find what makes me tick [here](github.com/PaulSonOfLars/tgbot)!
 
 With some extra Modules .
 
-Maintained by [this amazing guy](t.me/nitin_xD).
+Maintained by [this amazing guy](t.me/Thakor_Rahul).
 
 """
 
@@ -140,15 +140,15 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/Wolverinexmen_bot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
-                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/Sammy0007_chat")]])
+                [[InlineKeyboardButton(text="🎉 Add me to your group", url="t.me/VimalaBot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
+                [InlineKeyboardButton(text="👥 Need Help", url="https://t.me/Thakor_Rahul")]])
             update.effective_message.reply_text(
                 tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=buttons)
     else:
-        update.effective_message.reply_text("Started, Successfully Lmao!")
+        update.effective_message.reply_text("Yes?!")
 
 
 # for test purposes
