@@ -94,6 +94,9 @@ def new_member(bot: Bot, update: Update):
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text("My Master Is Here dude,Woah🤗!")
                 continue
+            if new_mem.id == 631847622:
+                bot.send_message(chat.id, "Yo,My Sir is just joined this group😎")
+                continue
 
             # Give start information when add bot to group
             elif new_mem.id == bot.id:
