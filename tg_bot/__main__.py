@@ -22,7 +22,7 @@ from tg_bot.modules.translations.strings import tld
 PM_START_TEXT = """
 Hi {}, my name is {}! If you have any questions on how to use me, read /help - for all available commands.
 
-I'm a group manager bot built in python3, using the python-telegram-bot library, and am fully opensource; \
+I'm a group manager bot built @MissSarika_bot in python3, using the python-telegram-bot library, and am fully opensource; \
 you can find what makes me tick [here](github.com/PaulSonOfLars/tgbot)!
 
 With some extra Modules .
