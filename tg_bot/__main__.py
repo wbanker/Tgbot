@@ -20,13 +20,12 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 from tg_bot.modules.translations.strings import tld
 
 PM_START_TEXT = """
-Hi {}, my name is *{}* ! If you have any questions on how to use me.
+Hi {}, my name is *{}* ! 
+If you have any questions on how to use me. click - /help
 
-I'm a group manager bot noob bot!
+Add Me In Your Group [Click Here](http://t.me/missmeena_bot?startgroup=true)
 
-Add Me In Your Group [Click Here](http://t.me/sarikarobot?startgroup=true)
-
-Manage By [This Genius Person.](t.me/tarun045)
+Handcrafted by [Genius Person](tg://user?id={})
 
 """
 
@@ -139,8 +138,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="➕ Add me To Group ➕", url="t.me/sarikarobot?startgroup=botstart"), InlineKeyboardButton(text="❓ Help", callback_data="help_back")],
-                [InlineKeyboardButton(text="Free Promotion ", url="https://t.me/promoyard")]])
+                [[InlineKeyboardButton(text="❓ Help", callback_data="help_back")]])
             update.effective_message.reply_text(
                 tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
