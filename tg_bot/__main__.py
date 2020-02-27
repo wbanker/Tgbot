@@ -139,14 +139,14 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="❓ Help", callback_data="help_back")]])
+                [[InlineKeyboardButton(text="Help❓", callback_data="help_back")]])
             update.effective_message.reply_text(
                 tld(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
                 disable_web_page_preview=True,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=buttons)
     else:
-        update.effective_message.reply_text("Hi *{}*, How can i help you ?")
+        update.effective_message.reply_text("Hi {mention} , How can i help you ?")
 
 
 # for test purposes
