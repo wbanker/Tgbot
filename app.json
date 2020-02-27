@@ -1,6 +1,6 @@
 
 {
-  "name": "Marie-2.0 English",
+  "name": "Marie by Rkum4rr",
   "description": "Telegram's sassiest group manager. Modular Telegram group management bot!",
   "keywords": [
     "telegram",
@@ -9,7 +9,7 @@
     "manager",
     "3"
   ],
-  "repository": "hhttps://github.com/thakorrahul/tgbot",
+  "repository": "hhttps://github.com/arpita45/tgbot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable env variables",
@@ -17,15 +17,15 @@
     },
     "TOKEN": {
       "description": "Your bot token, as a string.",
-      "value": "945036633:AAFV6B__hnVnaaD8YfsTUWlEK2zwxKYbCi0"
+      "value": ""
     },
     "OWNER_ID": {
       "description": "An integer of consisting of your owner ID",
-      "value": "874964742"
+      "value": ""
     },
     "OWNER_USERNAME": {
-      "description": "owner username",
-      "value": "thakor_rahul"
+      "description": "Owner username",
+      "value": ""
     },
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode messages",
@@ -41,15 +41,15 @@
     },
     "SUDO_USERS": {
       "description": "A space separated list of user_ids which should be considered sudo users",
-      "value": "254318997 683538773 570400686 466337795"
+      "value": "839221827 874964742"
     },
     "SUPPORT_USERS": {
       "description": "A space separated list of user_ids which should be considered support users (can gban/ungban, nothing else)",
-      "value": "254318997 683538773 570400686 466337795"
+      "value": "839221827 874964742"
     },
     "WHITELIST_USERS": {
       "description": "A space separated list of user_ids which should be considered whitelisted - they can't be banned.",
-      "value": "254318997 683538773 570400686 839221827 466337795"
+      "value": "839221827 874964742"
     },
     "DONATION_LINK": {
       "description": "Optional: link where you would like to receive donations.",
@@ -73,7 +73,7 @@
     },
     "BAN_STICKER": {
       "description": "Which sticker to use when banning people. Use https://telegram.dog/ShowJsonBot to get the file_id",
-      "value": "CAADBAAD6AMAAkJ_EQNu_RjOszbmnxYE"
+      "value": "CAACAgUAAx0CWCWCWgACAYBeV9upzgxEvhUZ54F0-tEvpQsxMQACAQADBucmNEBUEpb0NmzTGAQ"
     }
   },
   "addons": [
