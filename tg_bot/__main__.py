@@ -21,10 +21,11 @@ from tg_bot.modules.translations.strings import tld
 
 PM_START_TEXT = """
 Hi {}, my name is *{}* ! 
-If you have any questions on
-how to use me. click - /help
 
-Add Me In Your Group [Click Here](http://t.me/missmeena_bot?startgroup=true)
+want any help click - /help
+
+want to
+*manage Your Group* [Click Here](http://t.me/missmeena_bot?startgroup=true)
 
 Handcrafted by [Genius 🇮🇳](tg://user?id={})
 
@@ -146,7 +147,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=buttons)
     else:
-        update.effective_message.reply_text("Hi {mention} , How can i help you ?")
+        update.effective_message.reply_text("Hi Dude !")
 
 
 # for test purposes
