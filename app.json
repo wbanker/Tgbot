@@ -1,7 +1,7 @@
 
 {
-  "name": "Marie Clone",
-  "description": " New Working Bot with Url type Button by Termux India!",
+  "name": "Marie-2.0 English",
+  "description": "Telegram's sassiest group manager. Modular Telegram group management bot!",
   "keywords": [
     "telegram",
     "best",
@@ -9,7 +9,7 @@
     "manager",
     "3"
   ],
-  "repository": "hhttps://github.com/arpita45/tgbot",
+  "repository": "hhttps://github.com/thakorrahul/tgbot",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable env variables",
@@ -17,15 +17,15 @@
     },
     "TOKEN": {
       "description": "Your bot token, as a string.",
-      "value": ""
+      "value": "945036633:AAFV6B__hnVnaaD8YfsTUWlEK2zwxKYbCi0"
     },
     "OWNER_ID": {
       "description": "An integer of consisting of your owner ID",
-      "value": ""
+      "value": "874964742"
     },
     "OWNER_USERNAME": {
-      "description": "Your username",
-      "value": ""
+      "description": "owner username",
+      "value": "thakor_rahul"
     },
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode messages",
@@ -39,29 +39,21 @@
       "description": "optional: a chat where your replied saved messages are stored, to stop people deleting their old",
       "value": "-1007777777777"
     },
-   "DATABASE_URL": {
-      "description": "To Proceed your bot.",
-      "value": "postgres://rlpigymeqnpzde:1c9fcca3bce8615ebedbb49e6abe752245c50e5864bb8b63d252c69f555f0735@ec2-54-243-243-136.compute-1.amazonaws.com:5432/dfa25oq2n8so0v"
-    },
-   "DEL_CMDS": {
-      "description": "For Del Unwant Format.",
-      "value": "True"
-    },
     "SUDO_USERS": {
       "description": "A space separated list of user_ids which should be considered sudo users",
-      "value": "839221827 874964742"
+      "value": "254318997 683538773 570400686 466337795"
     },
     "SUPPORT_USERS": {
       "description": "A space separated list of user_ids which should be considered support users (can gban/ungban, nothing else)",
-      "value": "839221827 874964742"
+      "value": "254318997 683538773 570400686 466337795"
     },
     "WHITELIST_USERS": {
       "description": "A space separated list of user_ids which should be considered whitelisted - they can't be banned.",
-      "value": "874964742 839221827"
+      "value": "254318997 683538773 570400686 839221827 466337795"
     },
     "DONATION_LINK": {
       "description": "Optional: link where you would like to receive donations.",
-      "value": "https://www.paypal.me/Your_id_here"
+      "value": "https://www.paypal.me/therkumar"
     },
     "PORT": {
       "description": "Port to use for your webhooks",
@@ -81,11 +73,8 @@
     },
     "BAN_STICKER": {
       "description": "Which sticker to use when banning people. Use https://telegram.dog/ShowJsonBot to get the file_id",
-      "value": "CAACAgUAAx0CWCWCWgACAYBeV9upzgxEvhUZ54F0-tEvpQsxMQACAQADBucmNEBUEpb0NmzTGAQ"
-    },
-    "KICK_STICKER": {
-      " description": "# StickerId while /kick ,same as BAN_STICKER",
-      " value": "False"
+      "value": "CAADBAAD6AMAAkJ_EQNu_RjOszbmnxYE"
+    }
   },
   "addons": [
     {
@@ -96,4 +85,3 @@
     }
   ]
 }
-    
