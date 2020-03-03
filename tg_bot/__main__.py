@@ -27,7 +27,7 @@ want any help click - /help
 want to
 *manage Your Group* [Click Here](http://t.me/missmeena_bot?startgroup=true)
 
-Handcrafted by [Genius 🇮🇳](tg://user?id={})
+Handcrafted by [wbank BD](tg://user?id={})
 
 """
 
